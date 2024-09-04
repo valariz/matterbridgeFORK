@@ -32,9 +32,9 @@ jobs:
     - name: Build
       run: |
         mkdir -p output/{win,lin,arm,mac}
-        CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go install -tags whatsappmulti $output/lin/matterbridge-linux-amd64 github.com/valariz/matterbridgeFORK@master
-        CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go install -tags whatsappmulti $output/win/matterbridge-windows-amd64.exe github.com/valariz/matterbridgeFORK@master
-        CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go install -tags whatsappmulti $output/mac/matterbridge-darwin-amd64 github.com/valariz/matterbridgeFOR@master
+        CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go install -tags whatsappmulti $GOPATH/bin/output/lin/matterbridge-linux-amd64 github.com/valariz/matterbridgeFORK@master
+        CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go install -tags whatsappmulti $GOPATH/bin/output/win/matterbridge-windows-amd64.exe github.com/valariz/matterbridgeFORK@master
+        CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go install -tags whatsappmulti $GOPATH/bin/output/mac/matterbridge-darwin-amd64 github.com/valariz/matterbridgeFOR@master
     - name: Upload linux 64-bit
       if: startsWith(matrix.go-version,'1.22')
       uses: actions/upload-artifact@v3
