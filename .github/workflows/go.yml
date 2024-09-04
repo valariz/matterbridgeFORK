@@ -25,7 +25,7 @@ jobs:
       run: go build -tags whatsappmulti -v
 
     - name: Save Build
-    - uses: actions/upload-artifact@v4.4
+      uses: actions/upload-artifact@v4.4
     with:
       name: my-artifact
       path: artifact/
