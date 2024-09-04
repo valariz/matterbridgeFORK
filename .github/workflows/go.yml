@@ -22,10 +22,10 @@ jobs:
         go-version: '1.23'
 
     - name: Build
-      run: go build -tags whatsappmulti -v
+      run: go install -tags whatsappmulti
 
     - name: Save Build
-      uses: actions/upload-artifact@v4.4
+      uses: actions/upload-artifact@v4.4.0
       with:
         name: my-artifact
         path: artifact/
